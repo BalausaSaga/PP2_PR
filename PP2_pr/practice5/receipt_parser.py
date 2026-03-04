@@ -1,52 +1,55 @@
 import re
 import json
 
-def parse_receipt(file_content):
+def parse_receipt(text):
     data = {
         "items": [],
         "total_amount": 0.0,
-        "date_time": "",
-        "payment_method": ""
+        "date_time": None,
+        "payment_method": None
     }
 
-    item_pattern = re.compile(r"\d+\.\n(.*?)\n[\d, ]+ x [\d, ]+\n([\d, ]+)", re.DOTALL)
-    items = item_pattern.findall(file_content)
-    
-    for item_name, price_str in items:
-        clean_name = item_name.strip().replace('\n', ' ')
-        clean_price = float(price_str.replace(' ', '').replace(',', '.'))
+    datetime_match = re.search(r'Время:\s*(\d{2}\.\d{2}\.\d{4}\s\d{2}:\d{2}:\d{2})', text)
+    if datetime_match:
+        data["date_time"] = datetime_match.group(1)
+
+    if "Банковская карта" in text:
+        data["payment_method"] = "Card"
+    elif "Наличные" in text:
+        data["payment_method"] = "Cash"
+
+    item_pattern = re.compile(
+        r'(\d+)\.\n(.*?)\n(\d+,\d+)\s*x\s*([\d\s]+,\d+)\n([\d\s]+,\d+)', 
+        re.DOTALL
+    )
+
+    matches = item_pattern.finditer(text)
+    for match in matches:
+        def clean_num(s):
+            return float(s.replace(' ', '').replace(',', '.'))
+
+        product_name = match.group(2).replace('\n', ' ').strip()
+        quantity = clean_num(match.group(3))
+        unit_price = clean_num(match.group(4))
+        subtotal = clean_num(match.group(5))
+
         data["items"].append({
-            "product": clean_name,
-            "price": clean_price
+            "index": int(match.group(1)),
+            "name": product_name,
+            "quantity": quantity,
+            "unit_price": unit_price,
+            "subtotal": subtotal
         })
 
-    # Общая сумма
-    total_match = re.search(r"Total:\n([\d, ]+)", file_content)
+    total_match = re.search(r'ИТОГО:\s*([\d\s]+,\d+)', text)
     if total_match:
         data["total_amount"] = float(total_match.group(1).replace(' ', '').replace(',', '.'))
 
-    # Дата и время
-    dt_match = re.search(r"Time: ([\d.]+ [\d:]+)", file_content)
-    if dt_match:
-        data["date_time"] = dt_match.group(1)
-
-    # Метод оплаты
-    if "bank card" in file_content:
-        data["payment_method"] = "Bank Card"
-    else:
-        data["payment_method"] = "Cash"
-
     return data
 
-# Чтение файла и запуск
-try:
+if __name__ == "__main__":
     with open('raw.txt', 'r', encoding='utf-8') as f:
-        content = f.read()
+        raw_text = f.read()
     
-    result = parse_receipt(content)
-    
-    # Структурированный вывод (JSON)
-    print(json.dumps(result, indent=4, ensure_ascii=False))
-
-except FileNotFoundError:
-    print("Error: raw.txt is not found.")
+    parsed_data = parse_receipt(raw_text)
+    print(json.dumps(parsed_data, indent=4, ensure_ascii=False))
