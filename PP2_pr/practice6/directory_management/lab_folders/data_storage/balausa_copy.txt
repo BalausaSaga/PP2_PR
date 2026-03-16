@@ -1,0 +1,4 @@
+Name: Balausa
+Age: 17
+Status: University Student
+Nationality: Kazakh
