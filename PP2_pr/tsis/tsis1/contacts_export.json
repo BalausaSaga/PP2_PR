@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Alice Johnson",
+    "email": "alice@gmail.com",
+    "birthday": "1995-03-14",
+    "group": "Friend",
+    "phones": [
+      {
+        "phone": "+77011234567",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Bob Smith",
+    "email": "bob@work.com",
+    "birthday": "1988-07-22",
+    "group": "Work",
+    "phones": [
+      {
+        "phone": "+77029876543",
+        "type": "work"
+      }
+    ]
+  },
+  {
+    "name": "Carol White",
+    "email": "carol@gmail.com",
+    "birthday": "2000-11-05",
+    "group": "Family",
+    "phones": [
+      {
+        "phone": "+77031112233",
+        "type": "home"
+      }
+    ]
+  },
+  {
+    "name": "David Brown",
+    "email": "david@gmail.com",
+    "birthday": "1992-01-30",
+    "group": "Other",
+    "phones": [
+      {
+        "phone": "+77044455566",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Eve Davis",
+    "email": "eve@yahoo.com",
+    "birthday": "1985-09-18",
+    "group": "Work",
+    "phones": [
+      {
+        "phone": "+77055667788",
+        "type": "work"
+      }
+    ]
+  },
+  {
+    "name": "Frank Miller",
+    "email": "frank@gmail.com",
+    "birthday": "1990-06-25",
+    "group": "Friend",
+    "phones": [
+      {
+        "phone": "+77061234567",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Grace Lee",
+    "email": "grace@work.com",
+    "birthday": "1993-12-01",
+    "group": "Work",
+    "phones": [
+      {
+        "phone": "+77072345678",
+        "type": "work"
+      }
+    ]
+  },
+  {
+    "name": "Henry Wilson",
+    "email": "henry@mail.ru",
+    "birthday": "1987-04-17",
+    "group": "Family",
+    "phones": [
+      {
+        "phone": "+77083456789",
+        "type": "home"
+      }
+    ]
+  },
+  {
+    "name": "Irene Clark",
+    "email": "irene@gmail.com",
+    "birthday": "1998-08-09",
+    "group": "Friend",
+    "phones": [
+      {
+        "phone": "+77094567890",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "James Taylor",
+    "email": "james@outlook.com",
+    "birthday": "1983-02-28",
+    "group": "Other",
+    "phones": [
+      {
+        "phone": "+77105678901",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Kate Anderson",
+    "email": "kate@gmail.com",
+    "birthday": "1996-07-11",
+    "group": "Family",
+    "phones": [
+      {
+        "phone": "+77116789012",
+        "type": "home"
+      }
+    ]
+  },
+  {
+    "name": "Leo Martinez",
+    "email": "leo@work.com",
+    "birthday": "1991-10-03",
+    "group": "Work",
+    "phones": [
+      {
+        "phone": "+77127890123",
+        "type": "work"
+      }
+    ]
+  },
+  {
+    "name": "Mia Thompson",
+    "email": "mia@yahoo.com",
+    "birthday": "2001-05-20",
+    "group": "Friend",
+    "phones": [
+      {
+        "phone": "+77138901234",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Nick Roberts",
+    "email": "nick@gmail.com",
+    "birthday": "1984-09-14",
+    "group": "Other",
+    "phones": [
+      {
+        "phone": "+77149012345",
+        "type": "mobile"
+      }
+    ]
+  },
+  {
+    "name": "Olivia Harris",
+    "email": "olivia@mail.ru",
+    "birthday": "1997-03-30",
+    "group": "Family",
+    "phones": [
+      {
+        "phone": "+77150123456",
+        "type": "home"
+      }
+    ]
+  },
+  {
+    "name": "Sabina",
+    "email": "sabina@mail.com",
+    "birthday": "2015-11-28",
+    "group": "Family",
+    "phones": [
+      {
+        "phone": "+77073151577",
+        "type": "mobile"
+      },
+      {
+        "phone": "+777",
+        "type": "home"
+      }
+    ]
+  }
+]
